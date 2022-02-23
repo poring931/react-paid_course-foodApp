@@ -1,10 +1,15 @@
-import { AppBar, Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material'
+import { AppBar, Avatar, Box, Button, Container, IconButton, Link, Menu, MenuItem, Toolbar, Tooltip, Typography } from '@mui/material'
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
-  const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+  const pages = {
+    'Home': '/',
+    'Contact': '/contacts',
+    'About': '/about'
+  };
+  const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -33,8 +38,9 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
               noWrap
               component="div"
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-            >
-              <a href="/"><img width="50" src="/logo.svg" alt="" /></a>
+          >
+              <Link to="/"><img width="50" src="/logo.svg" alt="" /></Link>
+
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -66,11 +72,12 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
                   display: { xs: 'block', md: 'none' },
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
-                  </MenuItem>
-                ))}
+     
+              {Object.entries(pages).map((page) => (
+                <MenuItem key={page[0]} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">{page[0]}</Typography>
+                </MenuItem>
+              ))}
               </Menu>
             </Box>
             <Typography
@@ -79,18 +86,19 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
               component="div"
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
             >
-              LOGO
+             <Link to="/"><img width="50" src="/logo.svg" alt="" /></Link>
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-              {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: 'white', display: 'block' }}
-                >
-                  {page}
+         
+            {Object.entries(pages).map((page) => (
+              <Link key={page[0]} to={page[1]} onClick={handleCloseNavMenu} >
+                <Button  sx={{ my: 2, color: 'white', display: 'block' }} >
+                    {page[0]}
                 </Button>
-              ))}
+              </Link>
+            ))}
+
+
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
