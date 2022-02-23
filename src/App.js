@@ -6,29 +6,30 @@ import Preloader from "./components/Preloader";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import Movie from "./pages/Movie";
 import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header/>
       
-      <Container maxWidth="sm">
+      <Container className="main" maxWidth="sm">
 
         <Preloader/>
-        <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contacts" element={<Contact />} />
             <Route path="/about" element={<About />} />
+            <Route path="/movies/:id" element={<Movie />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
 
       </Container>
 
       <Footer/>
-    </>
+    </BrowserRouter>
+
   );
 }
 
