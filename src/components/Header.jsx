@@ -21,7 +21,7 @@ const Header = () => {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+// https://reactrouter.com/docs/en/v6/examples/custom-link почитать лучше тут
 
   const location = useLocation().pathname;
 

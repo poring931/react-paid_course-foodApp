@@ -3,13 +3,12 @@ import { useParams } from 'react-router-dom'
 
 const Movie = () => {
 
-    const value = useParams()
+    const {id} = useParams()
 
 
   return (
     <div>
-        Movie
-        {console.log(value)}
+        Movie {id}
     </div>
   )
 }

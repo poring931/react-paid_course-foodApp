@@ -16,7 +16,6 @@ function App() {
       
       <Container className="main" maxWidth="sm">
 
-        <Preloader/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/contacts" element={<Contact />} />
