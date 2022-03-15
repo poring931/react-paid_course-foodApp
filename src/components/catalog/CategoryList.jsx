@@ -5,7 +5,7 @@ const CategoryList = ({catalog =[]}) => {
   return (
     <div className='cat_list'>
         {catalog.map(catItem =>(
-            <CategoryItem key={catItem.idCategory} {...catItem} />
+            <CategoryItem  key={catItem.idCategory} {...catItem} />
         ))}
 
     </div>
