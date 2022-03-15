@@ -11,7 +11,7 @@ const Meal = (props) => {
   return (
     <Card className="recipe_item">
 
-        <Link className="see_more" to={`/meal/${idMeal}`}>
+        <Link to={`/meal/${idMeal}`}>
             <CardHeader
         avatar={
           <Avatar  aria-label="recipe">
@@ -25,13 +25,14 @@ const Meal = (props) => {
         }
         title={strMeal}
       />
+        </Link>
+
       <CardMedia
         component="img"
         height="250"
         image={strMealThumb}
         alt="Paella dish"
       />
-        </Link>
       <CardContent>
      
       </CardContent>
