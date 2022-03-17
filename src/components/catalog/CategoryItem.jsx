@@ -42,6 +42,8 @@ const CategoryItem = (props) => {
         strCategoryThumb
     } = props;
 
+    
+
   return (
      <Card className="recipe_item">
         <Link  to={`/category/${strCategory}`}>

@@ -6,7 +6,6 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 const Meal = (props) => {
 
     const { strMeal, idMeal, strMealThumb} = props;
-   
 
   return (
     <Card className="recipe_item">
