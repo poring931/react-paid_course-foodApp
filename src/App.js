@@ -1,5 +1,6 @@
 import { Container } from "@mui/material";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Recipe from "./components/catalog/Recipe";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import About from "./pages/About";
@@ -20,6 +21,7 @@ function App() {
             <Route path="/contacts" element={<Contact />} />
             <Route path="/about" element={<About />} />
             <Route path="/category/:name" element={<Category />} />
+            <Route path="/meal/:id" element={<Recipe />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
 

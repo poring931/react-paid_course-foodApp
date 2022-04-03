@@ -32,10 +32,8 @@ const Meal = (props) => {
         image={strMealThumb}
         alt="Paella dish"
       />
-      <CardContent>
+ 
      
-      </CardContent>
-      <hr ></hr>
         <Link className="see_more" to={`/meal/${idMeal}`}>
           <span >
             Watch recipe
